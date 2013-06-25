@@ -6,7 +6,7 @@
 	<driver>com.mysql.jdbc.Driver</driver>
 	<!--  This is used to determine the JDBC connection string to use -->
 	<jdbcConnectionString>
-		jdbc:mysql://127.0.0.1/scheduler
+		jdbc:mysql://127.0.0.1/service_scheduling_system
 	</jdbcConnectionString>
 	<!-- Database location (this ends in applicationContext.xml) -->
 	<databaseIP>localhost</databaseIP>
@@ -498,16 +498,16 @@ table section
 	
 	<!-- Override fetchtype of N-to-M  (lazy or eager fetching) -->
 	<fetchtype>
-		<one-to-many defaultlazy="true">
+		<one-to-many defaultlazy="false">
 			<except package="*" class="accountuser" property="authority" />
 		</one-to-many>
-		<many-to-one defaultlazy="true">
+		<many-to-one defaultlazy="false">
 			<except package="yourpackage" class="yourclass" property="yourproperty" />
 		</many-to-one>
-		<many-to-many defaultlazy="true">
+		<many-to-many defaultlazy="false">
 			<except package="yourpackage" class="yourclass" property="yourproperty" />
 		</many-to-many>
-		<one-to-one defaultlazy="true">
+		<one-to-one defaultlazy="false">
 			<except package="yourpackage" class="yourclass" property="yourproperty" />
 		</one-to-one>
 	</fetchtype>
